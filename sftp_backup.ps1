@@ -85,7 +85,7 @@ function log_exit($exit_code) {
                     "DeliveryNotificationOption" = [System.Net.Mail.DeliveryNotificationOptions]::None
                 }
 
-                send-mailmessage @params
+                $null = send-mailmessage @params
             }
         }
     }
@@ -95,7 +95,7 @@ function log_exit($exit_code) {
 
 function ensure_dir([string]$dir) {
     if (!(Test-Path -Path $dir)) {
-        New-Item -ItemType directory -Path $dir
+        $null = New-Item -ItemType directory -Path $dir
     }
 }
 
